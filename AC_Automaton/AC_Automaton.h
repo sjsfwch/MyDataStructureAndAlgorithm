@@ -75,7 +75,7 @@ int Automaton(TrieNode* root, string str) {
 		while (temp != root) {                 //若有匹配的字符，进行查找
 			if (temp->count > 0) {               //未被访问过
 				res += temp->count;       //出现次数
-				temp->count = -1;     //标记未访问
+				temp->count = -1;     //标记未访问，若不加可以统计出现的总次数
 			}
 			else
 				break;
