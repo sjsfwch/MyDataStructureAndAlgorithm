@@ -20,7 +20,7 @@ int getSequenceStart(int n) {
     return i - 1;
 }
 
-void ShellSort(vector<int> &A) {
+void ShellSort(vector<int>& A) {
     int k = getSequenceStart(A.size());
     while (k >= 1) {
         int d = pow(2, k) - 1;
@@ -41,7 +41,7 @@ int main(void) {
     // vector<int> nums = {10, 2, 44, 8, 26, 19, 115, 16, 18,
     // 38,87,89,7,11,95,75,12,856,94};
     vector<int> nums;
-    for (int i = 0; i < 100000; i++) {
+    for (int i = 0; i < 10000000; i++) {
         nums.push_back(rand());
     }
     ShellSort(nums);
