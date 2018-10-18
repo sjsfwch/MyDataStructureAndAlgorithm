@@ -15,6 +15,8 @@ class Tree {
    public:
     TreeNode* root;
     Tree(std::vector<int>& A);
+    Tree();
+    TreeNode* ConstructLikeLC(std::vector<int>& A, int idx, TreeNode* parent);
     // ~Tree();
     void traPreOrder();
     void traInOrder();

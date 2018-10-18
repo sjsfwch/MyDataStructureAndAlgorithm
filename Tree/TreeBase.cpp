@@ -40,6 +40,26 @@ Tree::Tree(std::vector<int>& A) {
     }
 }
 
+Tree::Tree() {}
+
+TreeNode* Tree::ConstructLikeLC(std::vector<int>& A,
+                                int idx,
+                                TreeNode* parent) {
+    TreeNode* p;
+    if (idx == 0) {
+        root = new TreeNode(A[idx]);
+        p = root;
+    } else {
+        p = new TreeNode(A[idx]);
+        p->parent = parent;
+    }
+    if (2 * idx + 1 < A.size() && A[2 * idx + 1] > -1)
+        p->lc = ConstructLikeLC(A, 2 * idx + 1, p);
+    if (2 * idx + 2 < A.size() && A[2 * idx + 2] > -1)
+        p->rc = ConstructLikeLC(A, 2 * idx + 2, p);
+    return p;
+}
+
 void Tree::traLevelOrder() {
     std::queue<TreeNode*> q;
     q.push(root);
