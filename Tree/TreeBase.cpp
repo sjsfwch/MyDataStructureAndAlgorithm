@@ -4,7 +4,7 @@ TreeNode::TreeNode(int n) {
     this->data = n;
 }
 
-Tree::Tree(std::vector<int>& A) {
+Tree::Tree(std::vector<int>& A) {    //第一版，效率很低，用ConstructLikeLC
     std::queue<TreeNode*> q;
     TreeNode* p = new TreeNode(A[0]);
     root = p;
